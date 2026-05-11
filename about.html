@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>关于我们 - 三立达阻燃窗帘</title>
+    <meta name="keywords" content="三立达阻燃窗帘,关于企业">
+    <meta name="description" content="关于三立达阻燃窗帘企业介绍">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 1px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #ddd;
+        }
+        
+        html, body {
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            overflow-x: hidden;
+            font: 14px 微软雅黑, Microsoft Yahei;
+            line-height: 24px;
+            color: #333;
+        }
+        
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #000;
+        }
+        
+        img {
+            border: none;
+        }
+        
+        ul, ol, li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .trans3 {
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .trans5 {
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+        
+        /* 头部导航 */
+        .head {
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .navi {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        
+        .navi a {
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .navi a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .navi a:hover::after {
+            width: 100%;
+        }
+        
+        .navi a.active {
+            color: #4CAF50;
+        }
+        
+        /* 页面标题 */
+        .page-banner {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        
+        .page-banner h1 {
+            font-size: 48px;
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        /* 关于我们主体 */
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #4CAF50;
+            margin: 15px auto 0;
+        }
+        
+        /* 企业简介 */
+        .intro {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .intro-img {
+            flex: 0 0 500px;
+        }
+        
+        .intro-img video,
+        .intro-img img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .intro-text {
+            flex: 1;
+        }
+        
+        .intro-text h3 {
+            font-size: 24px;
+            color: #1a365d;
+            margin-bottom: 20px;
+        }
+        
+        .intro-text p {
+            font-size: 16px;
+            line-height: 28px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* 优势列表 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .feature-item h4 {
+            font-size: 20px;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        
+        .feature-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 24px;
+        }
+        
+        /* 发展历程 */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #1a365d;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+        }
+        
+        .timeline-content {
+            flex: 0 0 calc(50% - 40px);
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background: #4CAF50;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #1a365d;
+        }
+        
+        .timeline-content h4 {
+            font-size: 18px;
+            color: #1a365d;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* 联系我们 */
+        .contact-section {
+            background: #fff;
+            padding: 60px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item h4 {
+            font-size: 18px;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .footer a {
+            color: #999;
+        }
+        
+        .footer a:hover {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="head">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="三立达阻燃窗帘"></a>
+        </div>
+        <nav class="navi">
+            <a href="index.html">网站首页</a>
+            <a href="about.html" class="active">关于我们</a>
+            <a href="product1.html">布帘面料</a>
+            <a href="product2.html">卷帘面料</a>            
+            <a href="news.html">新闻动态</a>
+            <a href="contact.html">联系我们</a>
+        </nav>
+    </header>
+
+    <!-- 页面标题 -->
+    <div class="page-banner">
+        <h1>关于我们</h1>
+    </div>
+
+    <!-- 关于我们主体 -->
+    <div class="about-content">
+        <!-- 企业简介 -->
+        <div class="section">
+            <h2 class="section-title">企业简介</h2>
+            <div class="intro">
+                <div class="intro-img">
+                    <video controls preload="metadata" autoplay loop muted style="width:100%;border-radius:8px;">
+                        <source src="video/about.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+                <div class="intro-text">
+                    <h3>三立达阻燃窗帘</h3>
+                    <p>三立达阻燃窗帘是一家专注于阻燃窗帘研发、生产、销售为一体的企业。公司采用"共聚阻燃纤维材料"专利技术和专有阻燃技术生产，产品符合《消防法》规定的消防技术标准难燃材料。</p>
+                    <p>我们致力于为客户提供高品质的阻燃窗帘解决方案，广泛应用于酒店、医院、学校、公共场所等需要防火安全的领域。公司拥有专业的研发团队和先进的生产设备，严格把控产品质量，确保每一件产品都符合国家阻燃标准。</p>
+                    <p>多年来，三立达凭借优质的产品和良好的服务，赢得了广大客户的信赖与支持。我们将继续秉持"质量第一、客户至上"的理念，为客户提供更优质的阻燃窗帘产品和服务。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 企业优势 -->
+        <div class="section">
+            <h2 class="section-title">企业优势</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="images/icon1.png" alt="专利技术">
+                    </div>
+                    <h4>专利技术</h4>
+                    <p>采用自主研发的"共聚阻燃纤维材料"专利技术，拥有多项发明专利，技术领先行业。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="images/icon2.png" alt="符合标准">
+                    </div>
+                    <h4>符合标准</h4>
+                    <p>产品符合《消防法》规定的消防技术标准，达到难燃材料要求，通过权威检测认证。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="images/icon3.png" alt="品质保证">
+                    </div>
+                    <h4>品质保证</h4>
+                    <p>严格的质量管控体系，从原材料到成品全程检测，确保每一件产品都符合高标准要求。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="images/icon4.png" alt="定制服务">
+                    </div>
+                    <h4>定制服务</h4>
+                    <p>提供专业的定制解决方案，根据客户需求量身定制不同规格、颜色的阻燃窗帘。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="images/icon5.png" alt="专业团队">
+                    </div>
+                    <h4>专业团队</h4>
+                    <p>拥有专业的研发团队和售后服务团队，为客户提供全方位的技术支持。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="images/icon6.png" alt="广泛应用">
+                    </div>
+                    <h4>广泛应用</h4>
+                    <p>产品广泛应用于酒店、医院、学校、公共场所等需要防火安全的各类场所。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 发展历程 -->
+        <div class="section">
+            <h2 class="section-title">发展历程</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2020年</h4>
+                        <p>三立达阻燃窗帘正式成立，开启阻燃窗帘研发生产之路。</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2021年</h4>
+                        <p>获得"共聚阻燃纤维材料"发明专利，技术实力获得认可。</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2022年</h4>
+                        <p>产品通过国家消防产品质量检测，获得型式检验报告。</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2023年</h4>
+                        <p>成为多家星级酒店和公共场所的合格供应商，市场影响力不断扩大。</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2024年</h4>
+                        <p>持续创新发展，推出更多系列阻燃窗帘产品，满足市场需求。</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 联系我们 -->
+        <div class="section">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-section">
+                <p>如您对我们的产品或服务有任何疑问，欢迎随时联系我们。</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>联系电话</h4>
+                        <p>13867142690</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>电子邮箱</h4>
+                        <p>shanlulu48399@outlook.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>公司地址</h4>
+                        <p>绍兴市越城区中兴大道189号名士之乡科创中心B214室</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>微信公众号</h4>
+                        <p>三立达阻燃新材料</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>Copyright © 2026 三立达阻燃窗帘 版权所有</p>
+    </footer>
+</body>
+</html>

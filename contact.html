@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>联系我们 - 三立达阻燃窗帘</title>
+    <meta name="keywords" content="三立达阻燃窗帘,联系我们,联系方式">
+    <meta name="description" content="联系三立达阻燃窗帘，获取产品报价和服务">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 1px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #ddd;
+        }
+        
+        html, body {
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            overflow-x: hidden;
+            font: 14px 微软雅黑, Microsoft Yahei;
+            line-height: 24px;
+            color: #333;
+        }
+        
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #000;
+        }
+        
+        img {
+            border: none;
+        }
+        
+        ul, ol, li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .trans3 {
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        /* 头部导航 */
+        .head {
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .navi {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        
+        .navi a {
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .navi a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .navi a:hover::after {
+            width: 100%;
+        }
+        
+        .navi a.active {
+            color: #4CAF50;
+        }
+        
+        /* 页面标题 */
+        .page-banner {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        
+        .page-banner h1 {
+            font-size: 48px;
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        /* 联系主体 */
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #4CAF50;
+            margin: 15px auto 0;
+        }
+        
+        /* 联系方式 */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-item {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        .contact-item h4 {
+            font-size: 16px;
+            color: #1a365d;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 22px;
+        }
+        
+        /* 地图和表单 */
+        .contact-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .map-box {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .map-box .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 16px;
+        }
+        
+        .map-info {
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        .map-info h4 {
+            font-size: 18px;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        
+        .map-info p {
+            font-size: 14px;
+            color: #666;
+            line-height: 26px;
+        }
+        
+        /* 表单 */
+        .form-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-box h4 {
+            font-size: 20px;
+            color: #1a365d;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-group label span {
+            color: #f00;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: 微软雅黑, Microsoft Yahei;
+            box-sizing: border-box;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1a365d;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+        
+        .form-submit {
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            color: #fff;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .form-submit:hover {
+            background: #2a4a8d;
+            transform: scale(1.02);
+        }
+        
+        /* 二维码区域 */
+        .qr-section {
+            margin-top: 60px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .qr-section h4 {
+            font-size: 20px;
+            color: #1a365d;
+            margin-bottom: 30px;
+        }
+        
+        .qr-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+        
+        .qr-item {
+            text-align: center;
+        }
+        
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background: #f5f5f5;
+            border: 1px dashed #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .qr-item p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .footer a {
+            color: #999;
+        }
+        
+        .footer a:hover {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="head">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="三立达阻燃窗帘"></a>
+        </div>
+        <nav class="navi">
+            <a href="index.html">网站首页</a>
+            <a href="about.html">关于我们</a>
+            <a href="product1.html">布帘面料</a>
+            <a href="product2.html">卷帘面料</a>            
+            <a href="news.html">新闻动态</a>
+            <a href="contact.html" class="active">联系我们</a>
+        </nav>
+    </header>
+
+    <!-- 页面标题 -->
+    <div class="page-banner">
+        <h1>联系我们</h1>
+    </div>
+
+    <!-- 联系主体 -->
+    <div class="contact-content">
+        <!-- 联系方式 -->
+        <div class="section">
+            <h2 class="section-title">联系方式</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h4>联系电话</h4>
+                    <p>13867142690</p>
+                    <!-- <p>0571-88888888</p> -->
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <h4>电子邮箱</h4>
+                    <p>shanlulu48399@outlook.com</p>
+                    <!-- <p>sales@sanlida-fr.com</p> -->
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h4>公司地址</h4>
+                    <p>绍兴市越城区</p>
+                    <p>中兴大道189号名士之乡科创中心B214室</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 二维码 -->
+        <div class="qr-section">
+            <h4>扫码关注我们</h4>
+            <div class="qr-grid">
+                <div class="qr-item">
+                    <img src="images/wechat.png" alt="微信公众号">
+                    <p>微信公众号</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>Copyright © 2026 三立达阻燃窗帘 版权所有</p>
+    </footer>
+</body>
+</html>

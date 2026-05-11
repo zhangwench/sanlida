@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>产品中心 - 三立达阻燃窗帘</title>
+    <meta name="keywords" content="三立达阻燃窗帘,遮光布帘,阻燃窗帘">
+    <meta name="description" content="三立达阻燃窗帘产品中心，展示各类阻燃遮光窗帘产品">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 1px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #ddd;
+        }
+        
+        html, body {
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            overflow-x: hidden;
+            font: 14px 微软雅黑, Microsoft Yahei;
+            line-height: 24px;
+            color: #333;
+        }
+        
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #000;
+        }
+        
+        img {
+            border: none;
+        }
+        
+        ul, ol, li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .trans3 {
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .trans5 {
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+        
+        /* 头部导航 */
+        .head {
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .navi {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        
+        .navi a {
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .navi a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .navi a:hover::after {
+            width: 100%;
+        }
+        
+        .navi a.active {
+            color: #4CAF50;
+        }
+        
+        /* 页面标题 */
+        .page-banner {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        
+        .page-banner h1 {
+            font-size: 48px;
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        /* 产品中心主体 */
+        .product-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #4CAF50;
+            margin: 15px auto 0;
+        }
+        
+        /* 产品列表 */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .product-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 350px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-info h3 {
+            font-size: 22px;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        
+        .product-info .desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .product-features {
+            margin-bottom: 20px;
+        }
+        
+        .product-features h4 {
+            font-size: 16px;
+            color: #1a365d;
+            margin-bottom: 10px;
+        }
+        
+        .product-features ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .product-features li {
+            background: #f5f5f5;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        /* 色卡选择 */
+        .color-cards {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+        .color-cards h4 {
+            font-size: 16px;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        
+        .color-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .color-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            border: 2px solid #ddd;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .color-item:hover .color-swatch,
+        .color-item.active .color-swatch {
+            border-color: #4CAF50;
+            transform: scale(1.1);
+        }
+        
+        .color-name {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .footer a {
+            color: #999;
+        }
+        
+        .footer a:hover {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="head">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="三立达阻燃窗帘"></a>
+        </div>
+        <nav class="navi">
+            <a href="index.html">网站首页</a>
+            <a href="about.html">关于我们</a>
+            <a href="product1.html" class="active">布帘面料</a>
+            <a href="product2.html">卷帘面料</a>            
+            <a href="news.html">新闻动态</a>
+            <a href="contact.html">联系我们</a>
+        </nav>
+    </header>
+
+    <!-- 页面标题 -->
+    <div class="page-banner">
+        <h1>产品中心</h1>
+    </div>
+
+    <!-- 产品中心主体 -->
+    <div class="product-content">
+        <!-- 产品列表 -->
+        <div class="section">
+            <h2 class="section-title">遮光布帘系列</h2>
+            <div class="product-list">
+                <!-- 雪尼尔遮光布帘 -->
+                <div class="product-item">
+                    <div class="product-img">
+                        <img src="images/product-xuenier.jpg" alt="雪尼尔遮光布帘">
+                    </div>
+                    <div class="product-info">
+                        <h3>雪尼尔遮光布帘</h3>
+                        <p class="desc">采用高品质雪尼尔(Chenille)工艺,表面绒感丰盈、触感柔滑,垂坠自然,遮光率高达98%,有效营造静谧舒适的室内环境。克重320-450g/㎡,幅宽2.8m/3.0m,适用于学校礼堂、医院病房、高端酒店及公共建筑等对安全、功能与美学兼具的场景。</p>
+                        <div class="product-features">
+                            <h4>产品特点</h4>
+                            <ul>
+                                <li>遮光率≥99%</li>
+                                <li>垂感优良</li>
+                                <li>隔热保温</li>
+                                <li>阻燃达标</li>
+                            </ul>
+                        </div>
+                        <div class="color-cards">
+                            <h4>颜色选择</h4>
+                            <div class="color-list">
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #2C3E50;"></div>
+                                    <span class="color-name">深灰</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #4A5568;"></div>
+                                    <span class="color-name">中灰</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #718096;"></div>
+                                    <span class="color-name">浅灰</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #1A365D;"></div>
+                                    <span class="color-name">藏青</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #8B7355;"></div>
+                                    <span class="color-name">卡其</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #E8DCC4;"></div>
+                                    <span class="color-name">米白</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 异面提花遮光布 -->
+                <div class="product-item">
+                    <div class="product-img">
+                        <img src="images/product-yimian-tihua.jpg" alt="异面提花遮光布">
+                    </div>
+                    <div class="product-info">
+                        <h3>异面提花遮光布</h3>
+                        <p class="desc">采用异面提花织造技术，正面呈现立体肌理与精致图案，彰显空间美学；反面为浅灰或米白色功能层，有效避免传统黑背帘造成的室内压抑感，白天拉合亦显明亮舒适。中间层嵌入高密度黑色遮光纱,遮光率高达99%,无需涂胶即可实现全遮光效果,环保无味、耐洗抗老化。克重420-480g/㎡,幅宽3.0m,垂感优异，适用于学校多媒体教室、医院病房、高端酒店及公共建筑等对安全性、功能性与装饰性兼具的高标准场景。</p>
+                        <div class="product-features">
+                            <h4>产品特点</h4>
+                            <ul>
+                                <li>双面异色</li>
+                                <li>立体提花</li>
+                                <li>遮光私密</li>
+                                <li>阻燃达标</li>
+                            </ul>
+                        </div>
+                        <div class="color-cards">
+                            <h4>颜色选择</h4>
+                            <div class="color-list">
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #1A365D;"></div>
+                                    <span class="color-name">宝蓝</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #2D5A27;"></div>
+                                    <span class="color-name">墨绿</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #722F37;"></div>
+                                    <span class="color-name">酒红</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #4A3728;"></div>
+                                    <span class="color-name">咖啡</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #F5F5DC;"></div>
+                                    <span class="color-name">米黄</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #E8E8E8;"></div>
+                                    <span class="color-name">银灰</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 人字纹遮光布 -->
+                <div class="product-item">
+                    <div class="product-img">
+                        <img src="images/product-renziwen.jpg" alt="人字纹遮光布">
+                    </div>
+                    <div class="product-info">
+                        <h3>人字纹遮光布</h3>
+                        <p class="desc">人字纹是一种源自高级西装面料的经典斜纹交织结构,呈“V”字连续排列,赋予布面低调内敛的立体肌理与高级质感。面料克重380-450g/㎡,结构致密,遮光率高达98%以上,无需添加遮光涂层即可实现优异遮光效果。表面平整耐磨,抗皱性好,垂感自然,长期使用不易变形。幅宽3.0m,色系涵盖中灰、米咖、藏青、石墨等工程常用色，广泛适用于学校教室、医院诊室、办公会议室及政府公建项目，既满足消防合规要求，又提升空间专业形象。</p>
+                        <div class="product-features">
+                            <h4>产品特点</h4>
+                            <ul>
+                                <li>人字纹理</li>
+                                <li>简约时尚</li>
+                                <li>遮光隔热</li>
+                                <li>阻燃达标</li>
+                            </ul>
+                        </div>
+                        <div class="color-cards">
+                            <h4>颜色选择</h4>
+                            <div class="color-list">
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #2C2C2C;"></div>
+                                    <span class="color-name">纯黑</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #3D3D3D;"></div>
+                                    <span class="color-name">炭灰</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #4B5563;"></div>
+                                    <span class="color-name">铁灰</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #1F2937;"></div>
+                                    <span class="color-name">深蓝灰</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #3F3F3F;"></div>
+                                    <span class="color-name">中黑</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #F3F4F6;"></div>
+                                    <span class="color-name">浅白</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 双面缎纹遮光布 -->
+                <div class="product-item">
+                    <div class="product-img">
+                        <img src="images/product-shuangmian.jpg" alt="双面缎纹遮光布">
+                    </div>
+                    <div class="product-info">
+                        <h3>双面缎纹遮光布</h3>
+                        <p class="desc">双面缎纹结构使面料正反两面均为光洁缎面,无传统遮光布“黑背”问题,无论从室内还是室外视角,均呈现高级统一的视觉效果。中间层通过致密交织嵌入遮光功能纱,遮光率高达99%,无需依赖化学涂层即可实现全遮光,环保无味、抗老化、可水洗,长期使用不泛黄、不开裂。克重400-460g/㎡,幅宽3.0m,垂感流畅，手感柔韧，色系涵盖珍珠白、浅灰、香槟金、石墨黑等高端工程色,特别适用于五星级酒店、医院VIP病房、高端写字楼及精装学校礼堂等对美学一致性与安全合规性双重严苛的场景。</p>
+                        <div class="product-features">
+                            <h4>产品特点</h4>
+                            <ul>
+                                <li>双面缎光</li>
+                                <li>高端大气</li>
+                                <li>遮光Premium</li>
+                                <li>阻燃达标</li>
+                            </ul>
+                        </div>
+                        <div class="color-cards">
+                            <h4>颜色选择</h4>
+                            <div class="color-list">
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #FFD700;"></div>
+                                    <span class="color-name">金色</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #C0A080;"></div>
+                                    <span class="color-name">香槟金</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #D4AF37;"></div>
+                                    <span class="color-name">古金</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #F8F8FF;"></div>
+                                    <span class="color-name">象牙白</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #DDD;"></div>
+                                    <span class="color-name">珍珠白</span>
+                                </div>
+                                <div class="color-item">
+                                    <div class="color-swatch" style="background: #BC8F8F;"></div>
+                                    <span class="color-name">玫瑰金</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>Copyright © 2026 三立达阻燃窗帘 版权所有</p>
+    </footer>
+</body>
+</html>

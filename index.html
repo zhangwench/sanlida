@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>三立达阻燃窗帘</title>
+    <meta name="keywords" content="三立达阻燃窗帘">
+    <meta name="description" content="三立达阻燃窗帘，是一家阻燃窗帘研发、生产、销售为一体专注阻燃窗帘定制的企业。">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        /* 全局样式 */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 1px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #ddd;
+        }
+        
+        html, body {
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            overflow-x: hidden;
+            font: 14px 微软雅黑, Microsoft Yahei;
+            line-height: 24px;
+            color: #333;
+        }
+        
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #000;
+        }
+        
+        img {
+            border: none;
+        }
+        
+        ul, ol, li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .trans3 {
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .trans5 {
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+        
+        /* 头部导航 */
+        .head {
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .navi {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        
+        .navi > li {
+            position: relative;
+        }
+        
+        .navi > li > a {
+            color: #fff;
+            font-size: 15px;
+            display: block;
+            padding: 10px 15px;
+        }
+        
+        .navi > li:hover > a {
+            color: #e06b25;
+        }
+        
+        .navi li ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            min-width: 150px;
+            display: none;
+        }
+        
+        .navi li:hover > ul {
+            display: block;
+        }
+        
+        .navi li ul li a {
+            color: #fff;
+            display: block;
+            padding: 10px 20px;
+            font-size: 13px;
+        }
+        
+        .navi li ul li a:hover {
+            background: #e06b25;
+        }
+        
+        /* 搜索框 */
+        .seekbox {
+            display: flex;
+            align-items: center;
+        }
+        
+        .seekbox input {
+            width: 150px;
+            height: 30px;
+            padding: 0 10px;
+            border: 1px solid #666;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 15px;
+        }
+        
+        .seekbox input::placeholder {
+            color: #999;
+        }
+        
+        .seekbox .seekb {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: -30px;
+        }
+        
+        .seekbox .seekb img {
+            width: 16px;
+            height: 16px;
+            filter: invert(1);
+        }
+        
+        /* 单页滚动框架 */
+        .onepage_main {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .onepage_box {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+        
+        /* 轮播图 */
+        .banbox {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+        }
+        
+        .banp {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .banp li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        
+        .banp li.active {
+            display: block;
+        }
+        
+        .banp li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .bant {
+            position: absolute;
+            left: 50%;
+            top: 75%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 10;
+        }
+        
+        .bant .t1 {
+            font-size: 40px;
+            line-height: 80px;
+            font-weight: bold;
+        }
+        
+        .bant .t2 {
+            font-size: 24px;
+            line-height: 40px;
+            margin-top: 20px;
+        }
+        
+        .bana {
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            padding: 15px 40px;
+            background: #e06b25;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 30px;
+            z-index: 10;
+        }
+        
+        .bana:hover {
+            background: #c55a1d;
+            color: #fff;
+        }
+        
+        /* 轮播箭头 */
+        .banleft, .banright {
+            width: 50px;
+            height: 80px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.5;
+        }
+        
+        .banleft {
+            left: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>') center no-repeat;
+        }
+        
+        .banright {
+            right: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>') center no-repeat;
+        }
+        
+        .banleft:hover, .banright:hover {
+            opacity: 1;
+        }
+        
+        /* 轮播点 */
+        .onepage_dot {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+        
+        .onepage_dot em {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            display: block;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .onepage_dot em.on {
+            background: #e06b25;
+            width: 10px;
+            height: 20px;
+            border-radius: 5px;
+        }
+        
+        /* 产品筛选区域 */
+        .probg {
+            width: 100%;
+            height: 100vh;
+            background: #f5f5f5;
+            position: relative;
+        }
+        
+        .prorow {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        
+        .probbox {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .prob {
+            text-align: center;
+        }
+        
+        .prob span {
+            display: block;
+            font-size: 16px;
+            color: #333;
+            padding: 10px 20px;
+            border-bottom: 2px solid #e06b25;
+        }
+        
+        .proabox {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+        
+        .proa {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .proa a {
+            padding: 8px 20px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .proa a:hover {
+            background: #e06b25;
+            color: #fff;
+        }
+        
+        /* 品牌介绍区域 */
+        .brand-section {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 120px 50px 80px;
+            box-sizing: border-box;
+        }
+        
+        .brand-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .brand-text {
+            flex: 1;
+            color: #fff;
+        }
+        
+        .brand-text h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            color: #e06b25;
+        }
+        
+        .brand-text p {
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        
+        .brand-features {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            flex: 1;
+        }
+        
+        .feature-item h3 {
+            font-size: 36px;
+            color: #e06b25;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item p {
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .brand-image {
+            flex: 1;
+        }
+        
+        .brand-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .footer a {
+            color: #999;
+        }
+        
+        .footer a:hover {
+            color: #e06b25;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .head {
+                padding: 0 20px;
+                height: 60px;
+            }
+            
+            .navi {
+                display: none;
+            }
+            
+            .bant .t1 {
+                font-size: 32px;
+                line-height: 40px;
+            }
+            
+            .bant .t2 {
+                font-size: 16px;
+            }
+            
+            .brand-content {
+                flex-direction: column;
+            }
+            
+            .brand-features {
+                flex-wrap: wrap;
+            }
+            
+            .probbox, .proabox {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <div class="head">
+        <div class="logo">
+            <a href="/">
+                <img src="images/logo.svg" alt="三立达窗帘">
+            </a>
+        </div>
+        <ul class="navi">
+            <li class="on"><a href="#">首页</a></li>
+            <li>
+                <a href="about.html">关于我们</a>
+            </li>
+            <li><a href="product1.html">布帘面料</a></li>
+            <li><a href="product2.html">卷帘面料</a></li>
+            <li><a href="news.html">新闻动态</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+        <div class="seekbox">
+            <form>
+                <input type="text" placeholder="搜索">
+                <div class="seekb">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><path d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/></svg>" alt="搜索">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 轮播图区域 -->
+    <div class="onepage_main">
+        <div class="onepage_box" style="left: 0;">
+            <div class="banbox">
+                <ul class="banp">
+                    <li class="active">
+                        <img src="images/1.jpg" alt="医院">
+                        <div class="bant">
+                            <div class="t1">医院门诊大厅</div>
+                            <!-- <div class="t2">三立达阻燃窗帘·医院场景</div> -->
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/2.jpg" alt="高校">
+                        <div class="bant">
+                            <div class="t1">高等学府</div>
+                            <!-- <div class="t2">守护系列银离子抗菌窗帘全球首发</div> -->
+                        </div>
+                    </li>
+                    <li>
+                        <img src="images/3.jpg" alt="养老院">
+                        <div class="bant">
+                            <div class="t1">银发经济</div>
+                            <!-- <div class="t2">专业银离子抗菌技术，抗菌率高达99%</div> -->
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <img src="images/4.jpg" alt="其他">
+                        <div class="bant">
+                            <!-- <div class="t1">服务银发</div> -->
+                            <!-- <div class="t2">专业银离子抗菌技术，抗菌率高达99%</div> -->
+                        </div>
+                    </li> -->
+                </ul>
+                <a href="#" class="bana trans3">了解品牌</a>
+                <div class="banleft"></div>
+                <div class="banright"></div>
+                <div class="onepage_dot">
+                    <em class="on"></em>
+                    <em></em>
+                    <em></em>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- 品牌介绍 -->
+    <section class="brand-section">
+        <div class="brand-content">
+            <div class="brand-text">
+                <h2>关于我们</h2>
+                <p>绍兴三立达纺织阻燃新材料有限公司是国家高新技术产业、科技型中小企业，专业研发生产满足消防标准的难燃涤纶卷帘面料、难燃涤纶布帘面料。</p>
+                <p>采用自主研发的「共聚阻燃纤维材料」专利技术，低烟无毒环保、轻量化节能、不变色变质破损，产品符合《消防法》规定的消防技术标准，达到难燃材料要求</p>
+                <p>产品广泛应用于建筑、交通、工业等领域，具有优异的阻燃性能，安全可靠。</p>
+            </div>
+            <div class="brand-image">
+                <img src="images/5.jpg" alt="三立达">
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>三立达 | 阻燃窗帘定制品牌</p>
+        <p>
+            <a href="about.html">关于我们</a> | 
+            <a href="contact.html">联系我们</a>
+        </p>
+        <p>&copy; 2026 三立达 版权所有</p>
+    </footer>
+
+    <script>
+        // 轮播图切换
+        const banpItems = document.querySelectorAll('.banp li');
+        const dots = document.querySelectorAll('.onepage_dot em');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            banpItems.forEach(item => item.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('on'));
+            
+            banpItems[index].classList.add('active');
+            dots[index].classList.add('on');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % banpItems.length;
+            showSlide(next);
+        }
+        
+        function prevSlide() {
+            const prev = (currentSlide - 1 + banpItems.length) % banpItems.length;
+            showSlide(prev);
+        }
+        
+        // 自动播放
+        let autoPlay = setInterval(nextSlide, 5000);
+        
+        // 点击切换
+        document.querySelector('.banright').addEventListener('click', () => {
+            nextSlide();
+            clearInterval(autoPlay);
+            autoPlay = setInterval(nextSlide, 5000);
+        });
+        
+        document.querySelector('.banleft').addEventListener('click', () => {
+            prevSlide();
+            clearInterval(autoPlay);
+            autoPlay = setInterval(nextSlide, 5000);
+        });
+        
+        // 点击圆点切换
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                clearInterval(autoPlay);
+                autoPlay = setInterval(nextSlide, 5000);
+            });
+        });
+        
+        // 导航滚动效果
+        window.addEventListener('scroll', () => {
+            const head = document.querySelector('.head');
+            if (window.scrollY > 100) {
+                head.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                head.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>卷帘产品系列 - 三立达阻燃窗帘</title>
+    <meta name="keywords" content="三立达阻燃窗帘,卷帘,阻燃卷帘,阳光卷帘,半透景卷帘,全遮光卷帘">
+    <meta name="description" content="三立达阻燃卷帘面料，革命性的填补国内产业空白的阻燃涤纶卷帘面料">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 1px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #ddd;
+        }
+        
+        html, body {
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            overflow-x: hidden;
+            font: 14px 微软雅黑, Microsoft Yahei;
+            line-height: 24px;
+            color: #333;
+        }
+        
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: #000;
+        }
+        
+        img {
+            border: none;
+        }
+        
+        ul, ol, li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .trans3 {
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .trans5 {
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+        
+        /* 头部导航 */
+        .head {
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .navi {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+        
+        .navi a {
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .navi a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .navi a:hover::after {
+            width: 100%;
+        }
+        
+        .navi a.active {
+            color: #4CAF50;
+        }
+        
+        /* 页面标题 */
+        .page-banner {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        
+        .page-banner h1 {
+            font-size: 42px;
+            color: #fff;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .page-banner .subtitle {
+            font-size: 18px;
+            color: #ccc;
+            margin-top: 15px;
+        }
+        
+        /* 卷帘主体 */
+        .curtain-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #4CAF50;
+            margin: 15px auto 0;
+        }
+        
+        /* 技术指标 */
+        .tech-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .spec-item {
+            background: #fff;
+            padding: 25px 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .spec-item h4 {
+            font-size: 16px;
+            color: #1a365d;
+            margin-bottom: 10px;
+        }
+        
+        .spec-item .value {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .spec-item .unit {
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .spec-item .desc {
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+            line-height: 20px;
+        }
+        
+        /* 详细介绍 */
+        .detail-list {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .detail-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-icon {
+            flex: 0 0 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        .detail-content {
+            flex: 1;
+        }
+        
+        .detail-content h4 {
+            font-size: 18px;
+            color: #1a365d;
+            margin-bottom: 8px;
+        }
+        
+        .detail-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 24px;
+        }
+        
+        /* 产品系列 */
+        .product-series {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-img .placeholder {
+            font-size: 16px;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-info h3 {
+            font-size: 20px;
+            color: #1a365d;
+            margin-bottom: 12px;
+        }
+        
+        .product-info .tag {
+            display: inline-block;
+            background: #4CAF50;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .product-info p {
+            font-size: 14px;
+            color: #666;
+            line-height: 24px;
+        }
+        
+        .product-features {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .product-features h5 {
+            font-size: 14px;
+            color: #1a365d;
+            margin-bottom: 10px;
+        }
+        
+        .product-features ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .product-features li {
+            background: #f5f5f5;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* 认证标识 */
+        .certifications {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .cert-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .cert-item {
+            text-align: center;
+        }
+        
+        .cert-item .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a365d 0%, #2a4a8d 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .cert-item p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .footer a {
+            color: #999;
+        }
+        
+        .footer a:hover {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="head">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="三立达阻燃窗帘"></a>
+        </div>
+        <nav class="navi">
+            <a href="index.html">网站首页</a>
+            <a href="about.html">关于我们</a>
+            <a href="product1.html">布帘面料</a>
+            <a href="product2.html" class="active">卷帘面料</a>            
+            <a href="news.html">新闻动态</a>
+            <a href="contact.html">联系我们</a>
+        </nav>
+    </header>
+
+    <!-- 页面标题 -->
+    <div class="page-banner">
+        <div>
+            <h1>卷帘产品系列</h1>
+            <p class="subtitle">革命性的填补国内产业空白的阻燃涤纶卷帘面料</p>
+        </div>
+    </div>
+
+    <!-- 卷帘主体 -->
+    <div class="curtain-content">
+        <!-- 技术指标 -->
+        <div class="section">
+            <h2 class="section-title">核心技术指标</h2>
+            <div class="tech-specs">
+                <div class="spec-item">
+                    <h4>面料成分</h4>
+                    <div class="value">100%</div>
+                    <div class="unit">阻燃聚酯纤维</div>
+                    <p class="desc">不含任何涂层涂覆包覆物质，无毒无害环保</p>
+                </div>
+                <div class="spec-item">
+                    <h4>燃烧性能</h4>
+                    <div class="value">GB8624</div>
+                    <div class="unit">B1级</div>
+                    <p class="desc">符合消防安全标准强制性要求</p>
+                </div>
+                <div class="spec-item">
+                    <h4>抗弯刚度</h4>
+                    <div class="value">30~160</div>
+                    <div class="unit">mN.cm</div>
+                    <p class="desc">按GB/T18318.1-2009检测，具有卷帘所需的硬挺功能</p>
+                </div>
+                <div class="spec-item">
+                    <h4>耐光色牢度</h4>
+                    <div class="value">≥6-7</div>
+                    <div class="unit">级</div>
+                    <p class="desc">满足遮阳需要，符合GB18401 C类及以上</p>
+                </div>
+                <div class="spec-item">
+                    <h4>轻量化克重</h4>
+                    <div class="value">250g</div>
+                    <div class="unit">以下/㎡</div>
+                    <p class="desc">节能环保，可降低电动卷帘耗电量50%以上</p>
+                </div>
+                <div class="spec-item">
+                    <h4>环保无毒</h4>
+                    <div class="value">无毒害</div>
+                    <div class="unit">环保</div>
+                    <p class="desc">无光解反应，遇火无烟尘，无有毒挥发物</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 产品系列 -->
+        <div class="section">
+            <h2 class="section-title">三大产品系列</h2>
+            <div class="product-series">
+                <!-- 阳光卷帘 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/curtain-yangguang.jpg" alt="【阳光卷帘】">
+                    </div>
+                    <div class="product-info">
+                        <h3>阳光卷帘</h3>
+                        <span class="tag">阻燃防晒</span>
+                        <p>采用双经双纬平纹织法，阻燃聚酯纤维制成。具有优异的遮阳防晒效果，同时保证良好的通风透光性。适用于家庭客厅、办公室等需要调节光线的场所。</p>
+                        <div class="product-features">
+                            <h5>产品特点</h5>
+                            <ul>
+                                <li>100%阻燃聚酯纤维</li>
+                                <li>双经双纬平纹织法</li>
+                                <li>防晒隔热</li>
+                                <li>通风景观</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 半透景（柔景）卷帘 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/curtain-roujing.jpg" alt="半透景卷帘"">
+                    </div>
+                    <div class="product-info">
+                        <h3>半透景（柔景）卷帘</h3>
+                        <span class="tag">柔光舒适</span>
+                        <p>采用缎纹不同色织法，面料柔软细腻。通过特殊织造工艺实现半透光效果，营造柔和舒适的光环境。适用于卧室、书房等需要柔和光线的场所。</p>
+                        <div class="product-features">
+                            <h5>产品特点</h5>
+                            <ul>
+                                <li>100%阻燃聚酯纤维</li>
+                                <li>缎纹不同色织法</li>
+                                <li>半透光效果</li>
+                                <li>柔光舒适</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 全遮光卷帘 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/curtain-zheguang.jpg" alt="全遮光卷帘"">
+                    </div>
+                    <div class="product-info">
+                        <h3>全遮光卷帘</h3>
+                        <span class="tag">完全遮光</span>
+                        <p>采用高密度阻燃柔纱帘设计，三层结构确保完全遮光。阻燃性能优异，同时具有良好的隔音隔热效果。适用于影院、会议室等需要完全遮光的场所。</p>
+                        <div class="product-features">
+                            <h5>产品特点</h5>
+                            <ul>
+                                <li>100%阻燃聚酯纤维</li>
+                                <li>高密度三层结构</li>
+                                <li>完全遮光</li>
+                                <li>隔音隔热</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 认证资质 -->
+        <div class="section">
+            <h2 class="section-title">认证与标准</h2>
+            <div class="certifications">
+                <p>产品符合以下国家标准和认证要求</p>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <div class="cert-icon">GB8624<br>B1级</div>
+                        <p>燃烧性能等级</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">GB20286<br>阻燃1级</div>
+                        <p>阻燃标识认证</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">GB/T18318.1<br>-2009</div>
+                        <p>抗弯刚度检测</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">GB18401<br>C类</div>
+                        <p>纺织品安全标准</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>Copyright © 2026 三立达阻燃窗帘 版权所有</p>
+    </footer>
+</body>
+</html>
